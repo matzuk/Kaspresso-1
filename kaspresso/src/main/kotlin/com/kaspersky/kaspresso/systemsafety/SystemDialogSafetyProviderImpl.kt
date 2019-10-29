@@ -4,7 +4,6 @@ import android.widget.FrameLayout
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.BySelector
 import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.UiSelector
 import androidx.test.uiautomator.Until
 import com.kaspersky.kaspresso.logger.UiTestLogger
 import java.util.concurrent.TimeUnit
@@ -17,8 +16,10 @@ class SystemDialogSafetyProviderImpl(
     private val uiDevice: UiDevice
 ) : SystemDialogSafetyProvider {
 
+    // todo transfer to params such arguments like 2000
     private val attemptsToSuppress: List<(UiDevice) -> Unit> = listOf(
-        { uiDevice -> uiDevice.findObject(UiSelector().resourceId("android:id/button1")).click() },
+        { uiDevice -> uiDevice.wait(Until.findObject(By.res("android:id/button1")), 2000).click() },
+        { uiDevice -> uiDevice.wait(Until.findObject(By.textContains("Close")), 2000).click() },
         { uiDevice -> uiDevice.pressBack() }
     )
 
@@ -36,6 +37,7 @@ class SystemDialogSafetyProviderImpl(
     @Throws(Throwable::class)
     override fun <T> passSystemDialogs(action: () -> T): T {
         return try {
+
             action.invoke()
         } catch (error: Throwable) {
             if (isAndroidSystemDetected()) {
