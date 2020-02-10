@@ -6,17 +6,17 @@
 # Kaspresso
 
 Kaspresso is a great UiTest framework based on [Espresso](https://developer.android.com/training/testing/espresso) and 
-[UI Automator](https://developer.android.com/training/testing/ui-automator), and providing a wide set of such amazing features as
-- 100% stability 
-- increased speed of Espresso and UiAutomator command execution. <br>
+[UI Automator](https://developer.android.com/training/testing/ui-automator), and providing a wide set of such amazing features as:
+1. 100% stability.
+2. Increased speed of Espresso and UiAutomator command execution. <br>
 In case of UiAutomator, we get **10x** acceleration for some commands!
-- beautiful readability through human DSL
-- incredible mechanism of interceptors allowing you to catch all action and assertions in one place!
-- understandable and full logging
-- ability to call ADB commands
-- philosophy how to write ui-tests and DSL providing this philosophy
-- light and convenient feature's screenshoting
-- etc.
+3. Beautiful readability through human DSL.
+4. Incredible mechanism of interceptors allowing you to catch all action and assertions in one place!
+5. Understandable and full logging.
+6. Ability to call ADB commands.
+7. Philosophy how to write ui-tests and DSL providing this philosophy.
+8. Light and convenient feature's screenshoting.
+9. Etc.
 
 ![](https://habrastorage.org/webt/dw/jh/9k/dwjh9kypjl637kxj8tiaxwjvtp0.png)
 
